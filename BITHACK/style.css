@@ -36,7 +36,6 @@ nav .wrapper .logo i{
 nav .wrapper .left .input{
     background: rgb(237, 245, 246);
     width: 100%;
-    padding: 0.5rem 0.8rem;
     display: flex;
     align-items: center;
     gap: 0.5rem;
@@ -46,6 +45,7 @@ nav .wrapper .left .input{
 nav .wrapper .left .input input[type='search']{
     width: 15rem;
     border: none;
+    padding: 0.5rem 0.8rem;
     background: transparent;
 }
 
