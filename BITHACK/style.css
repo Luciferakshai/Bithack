@@ -219,3 +219,12 @@ nav .wrapper .right .me i:first-child{
 .dropdown:hover .dropdown-content {
     display: block;
 }
+@keyframes slide-in {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(0); }
+  }
+
+  /* Apply the animation to the element */
+  .animated-text {
+    animation: slide-in 1s ease-out;
+  }
