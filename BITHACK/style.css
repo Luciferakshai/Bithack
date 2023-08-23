@@ -252,9 +252,11 @@ nav .wrapper .right .me i:first-child{
 }
 #section4{
     height: 700px;
-    background: url(https://st3.depositphotos.com/1091429/12693/i/450/depositphotos_126930636-stock-photo-tips-word-collected-of-wooden.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position-y: center;
+    background: linear-gradient(315deg,rgba(255, 0, 0, 0.351), rgba(0, 0, 0, 0.882) ),url(https://st3.depositphotos.com/1091429/12693/i/450/depositphotos_126930636-stock-photo-tips-word-collected-of-wooden.jpg);
     display: inline-block;
-    
     width:100%;
 }
 #events-dropdown{
@@ -273,7 +275,7 @@ nav .wrapper .right .me i:first-child{
     text-decoration: underline solid;
     font-size: 0.9rem;
 }
-#about{
+#about,#tips{
     width: 80%;
     color: white;
     height: fit-content;
