@@ -184,7 +184,7 @@ nav .wrapper .right .me i:first-child{
 }
 .main h1{
     font-size: 4rem;
-    font-weight: 700;
+    font-weight: 400;
 }
 .btn1{
     height: 45px;
@@ -233,13 +233,13 @@ nav .wrapper .right .me i:first-child{
 }
 #section3{
     height: 700px;
-    background:lightblue;
+    background:#B1C7DC;
     display: inline-block;
     width:100%;
 }
 #section4{
     height: 700px;
-    background:rgb(11, 90, 116);
+    background:rgb(125, 142, 147);
     display: inline-block;
     width:100%;
 }
