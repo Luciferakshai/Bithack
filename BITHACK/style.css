@@ -176,7 +176,7 @@ nav .wrapper .right .me i:first-child{
     font-weight: 700;
 }
 .main{
-    background: url(./home.jpg.jpg)no-repeat;
+    background: url(./home.jpg)no-repeat;
     background-size: cover;
     height: 100vh;
     width: 100%;
