@@ -14,6 +14,7 @@ nav .wrapper{
     gap: 1rem;
     padding: 0.3rem 4rem;
     background: #fff;
+    height: 70px;
 }
 
 nav .wrapper .left,
@@ -200,6 +201,7 @@ nav .wrapper .right .me i:first-child{
 .dropdown {
     position: relative;
     border: none;
+    display: none;
 }
 
 .dropdown-content {
@@ -242,4 +244,20 @@ nav .wrapper .right .me i:first-child{
     background:rgb(125, 142, 147);
     display: inline-block;
     width:100%;
+}
+#events-dropdown{
+    display: none;
+}
+.jobs:hover #events-dropdown,.jobs:hover #events-heading{
+    display: block;
+    position: relative;
+    top: 50px;
+    background-color:#fff;
+    padding-right: 10px;
+    text-decoration: none;
+}
+#events-dropdown ul li:hover a{
+    color: #000;
+    text-decoration: underline solid;
+    font-size: 0.9rem;
 }
