@@ -240,9 +240,11 @@ nav .wrapper .right .me i:first-child{
 }
 #section3{
     height: 700px;
-    color: blue;
+    background-image: linear-gradient(45deg, rgba(0, 0, 0, 0.822),rgba(255, 255, 255, 0.625) ), url("https://t4.ftcdn.net/jpg/01/08/34/53/360_F_108345358_mREIebrNXJM0iuAlxvEshj1j2QrhhzpK.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position-y: center;
     font-family: Arial, sans-serif;
-    background:#B1C7DC;
     display: inline-block;
     width:100%;
     font-size: 4rem;
@@ -269,4 +271,18 @@ nav .wrapper .right .me i:first-child{
     color: #000;
     text-decoration: underline solid;
     font-size: 0.9rem;
+}
+#about{
+    width: 80%;
+    color: white;
+    height: fit-content;
+    min-height: 100px;
+    background-color: rgba(0, 0, 0, 0.581);
+    text-align: center;
+    position: relative;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    border-radius: 20px;
+    padding: 30px;
 }
