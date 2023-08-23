@@ -182,8 +182,13 @@ nav .wrapper .right .me i:first-child{
     height: 100vh;
     width: 100%;
     background-position: 50% 50%;
+    
 }
 .main h1{
+    font-size: 4rem;
+    font-weight: 400;
+}
+.main h2{
     font-size: 4rem;
     font-weight: 400;
 }
@@ -235,9 +240,13 @@ nav .wrapper .right .me i:first-child{
 }
 #section3{
     height: 700px;
+    color: blue;
+    font-family: Arial, sans-serif;
     background:#B1C7DC;
     display: inline-block;
     width:100%;
+    font-size: 4rem;
+    font-weight: 400;
 }
 #section4{
     height: 700px;
