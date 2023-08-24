@@ -236,7 +236,7 @@ nav .wrapper .right .me i:first-child{
 
   /* Apply the animation to the element */
   .animated-text {
-    animation: slide-in 1s ease-out;
+     animation: slide-in 1s ease-out;
 }
 #section3{
     height: 700px;
