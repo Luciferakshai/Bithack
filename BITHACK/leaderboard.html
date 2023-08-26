@@ -1,76 +1,111 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Staff Performance Tracker</title>
+    <title>Leaderboard</title>
     <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f7f7f7;
+            margin: 0;
+            padding: 0;
+        }
+
+        .leaderboard {
+            width: 80%;
+            margin: 20px auto;
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+        }
+
+        .leaderboard h1 {
+            text-align: center;
+            padding: 20px;
+            background-color: #333;
+            color: #fff;
+            margin: 0;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+        }
+
         table {
+            width: 100%;
             border-collapse: collapse;
-            width: 50%;
-            margin: 20px;
         }
 
         th, td {
-            border: 1px solid #ccc;
-            padding: 8px;
-            text-align: center;
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
         }
 
         th {
+            background-color: #333;
+            color: #fff;
+        }
+
+        tr:nth-child(even) {
             background-color: #f2f2f2;
         }
 
-        #leaderMark {
-            font-weight: bold;
+        tr:nth-child(odd) {
+            background-color: #fff;
+        }
+
+        th, td:first-child {
+            padding-left: 30px;
+        }
+
+        td:last-child {
+            padding-right: 30px;
+        }
+
+        @media screen and (max-width: 600px) {
+            .leaderboard {
+                width: 100%;
+            }
+            th, td {
+                padding: 10px;
+            }
+            th, td:first-child {
+                padding-left: 10px;
+            }
+            td:last-child {
+                padding-right: 10px;
+            }
         }
     </style>
 </head>
 <body>
-    <h1>Staff Performance Tracker</h1>
-    
-    <table>
-        <tr>
-            <th>Staff</th>
-            <th>Project A Mark</th>
-            <th>Project B Mark</th>
-            <th>Project C Mark</th>
-        </tr>
-        <tr>
-            <td>Staff Member 1</td>
-            <td><input type="number" id="staff1ProjectA" onchange="calculateLeaderMark()"></td>
-            <td><input type="number" id="staff1ProjectB" onchange="calculateLeaderMark()"></td>
-            <td><input type="number" id="staff1ProjectC" onchange="calculateLeaderMark()"></td>
-        </tr>
-        <tr>
-            <td>Staff Member 2</td>
-            <td><input type="number" id="staff2ProjectA" onchange="calculateLeaderMark()"></td>
-            <td><input type="number" id="staff2ProjectB" onchange="calculateLeaderMark()"></td>
-            <td><input type="number" id="staff2ProjectC" onchange="calculateLeaderMark()"></td>
-        </tr>
-        <!-- Add more staff members as needed -->
-    </table>
-    
-    <h2>Leader's Mark</h2>
-    <p id="leaderMark">0</p>
-    
-    <script>
-        function calculateLeaderMark() {
-            // Get the values of project marks for all staff members
-            const staff1ProjectA = parseFloat(document.getElementById("staff1ProjectA").value) || 0;
-            const staff1ProjectB = parseFloat(document.getElementById("staff1ProjectB").value) || 0;
-            const staff1ProjectC = parseFloat(document.getElementById("staff1ProjectC").value) || 0;
-            
-            const staff2ProjectA = parseFloat(document.getElementById("staff2ProjectA").value) || 0;
-            const staff2ProjectB = parseFloat(document.getElementById("staff2ProjectB").value) || 0;
-            const staff2ProjectC = parseFloat(document.getElementById("staff2ProjectC").value) || 0;
-            
-            // Calculate the leader's mark as the average of staff marks
-            const leaderMark = ((staff1ProjectA + staff1ProjectB + staff1ProjectC) + (staff2ProjectA + staff2ProjectB + staff2ProjectC)) / 2;
-            
-            // Update the leader's mark on the page
-            document.getElementById("leaderMark").textContent = leaderMark.toFixed(2);
-        }
-    </script>
+    <div class="leaderboard">
+        <h1>Leaderboard</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>Rank</th>
+                    <th>Name</th>
+                    <th>Score</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>Player 1</td>
+                    <td>1000</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Player 2</td>
+                    <td>900</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>Player 3</td>
+                    <td>800</td>
+                </tr>
+                <!-- Add more rows for additional players -->
+            </tbody>
+        </table>
+    </div>
 </body>
 </html>
