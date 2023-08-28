@@ -58,7 +58,16 @@ font-family: sans-serif;
 font-weight: bold;
 font-size: medium;
 }
-.btn1:hover,.btn2:hover,.btn3:hover,.btn4:hover{
+.btn5
+{
+background-color: rgb(12, 17, 39);
+border-radius: 50px; 
+color: aliceblue;
+font-family: sans-serif;
+font-weight: bold;
+font-size: medium;
+}
+.btn1:hover,.btn2:hover,.btn3:hover,.btn4:hover,.btn5:hover{
     transform: scale(1.2);
     background-color: rgba(241, 249, 248, 0.338);
     color: black;
@@ -69,6 +78,51 @@ font-size: medium;
         {
             height: 100vh;
         }
+        .event-cards {
+display: flex;
+justify-content: center;
+gap: 20px;
+}
+
+.card {
+width: 300px;
+background-color: #fff;
+border-radius: 10px;
+box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+overflow: hidden;
+}
+
+.card img {
+width: 100%;
+height: auto;
+display: block;
+}
+
+.card-content {
+padding: 20px;
+}
+
+.card-content h2 {
+margin-top: 0;
+}
+
+.card-content p {
+margin: 10px 0;
+}
+
+.btn {
+display: inline-block;
+padding: 10px 20px;
+background-color: #007bff;
+color: #fff;
+text-decoration: none;
+border-radius: 5px;
+transition: background-color 0.3s;
+}
+
+.btn:hover {
+background-color: #0056b3;
+}
     </style>
 </head>
 <body>
@@ -78,15 +132,38 @@ font-size: medium;
     <a href="#conference"><button class="btn1" type="button">CONFERENCE</button></a>
     <a href="#workshop"><button class="btn2" type="button">WORKSHOPS</button></a>
     <a href="#seminar"><button class="btn3" type="button">SEMINAR</button></a>
-    <a href="#createevent"><button class="btn4" type="button">CREATE AN EVENT</button></a>
+    <a href="#clubactivity"><button class="btn4" type="button">CLUB ACTIVITIES</button></a>
+    <a href="#createevent"><button class="btn5" type="button">CREATE AN EVENT</button></a>
 </div>
 <div id="conference">
-    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iure quibusdam corrupti dignissimos maiores nam ipsa culpa eveniet doloremque cum sapiente tenetur ex laborum porro non tempore recusandae, velit nemo debitis.</p>
+    <h3 style="text-align: center;font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;color: white;">CONFERENCE-EVENTS</h3>
+    <div class="event-cards">
+        <div class="card">
+          <img src="event1.jpg" alt="Event 1">
+          <div class="card-content">
+            <h2>Event 1</h2>
+            <p>Date: July 15, 2023</p>
+            <p>Location: Example Venue</p>
+            <a href="#" class="btn">Learn More</a>
+          </div>
+        </div>
+        <div class="card">
+          <img src="event2.jpg" alt="Event 2">
+          <div class="card-content">
+            <h2>Event 2</h2>
+            <p>Date: August 10, 2023</p>
+            <p>Location: Another Venue</p>
+            <a href="#" class="btn">Learn More</a>
+          </div>
+        </div>
 </div>
 <div id="workshop">
     <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iure quibusdam corrupti dignissimos maiores nam ipsa culpa eveniet doloremque cum sapiente tenetur ex laborum porro non tempore recusandae, velit nemo debitis.</p>
 </div>
 <div id="seminar">
+    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iure quibusdam corrupti dignissimos maiores nam ipsa culpa eveniet doloremque cum sapiente tenetur ex laborum porro non tempore recusandae, velit nemo debitis.</p>
+</div>
+<div id="clubactivity">
     <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iure quibusdam corrupti dignissimos maiores nam ipsa culpa eveniet doloremque cum sapiente tenetur ex laborum porro non tempore recusandae, velit nemo debitis.</p>
 </div>
 <div id="createevent">
