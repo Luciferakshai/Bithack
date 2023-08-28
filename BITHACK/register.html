@@ -19,11 +19,11 @@
         <input type="text" placeholder="RollNumber" required>
       </div>
       <div class="details">
-        <input type="email" placeholder="Email" required>
-        <input type="password" placeholder="Password" required>
-        <input type="password" placeholder="Confirm Password" required>
-        <input type="text" placeholder="Institution" required>
-        <input type="text" placeholder="Department" required list="type"><br>
+        <input name="email" type="email" placeholder="Email" required>
+        <input name="password" type="password" placeholder="Password" required>
+        <input name="cpassword" type="password" placeholder="Confirm Password" required>
+        <input name="Institution" type="text" placeholder="Institution" required>
+        <input name="Department" type="text" placeholder="Department" required list="type"><br>
         <datalist id="type">
           <option value="CSE">
           <option value="IT">
@@ -42,7 +42,7 @@
           <option value="AI/DS">
           <option value="AI/ML">
         </datalist>
-        <input type="text" placeholder="Phone number" required>
+        <input name="phone_no" type="text" placeholder="Phone number" required>
       </div>
       <div class="submit">
         <button type="submit">Register</button>
