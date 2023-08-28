@@ -123,8 +123,8 @@ body{
     padding: 30px 40px 40px 35px ;
   }
   .container .content .right-side{
-   width: 75%;
-   margin-left: 55px;
+width: 75%;
+margin-left: 55px;
 }
 }
 @media (max-width: 820px) {
