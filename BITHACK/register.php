@@ -13,7 +13,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $password = $_POST["password"];
     $cpassword = $_POST["cpassword"];
     $name =$_POST["name"];
-    $mobile_no = $_POST["mobile_no"];
+    $phone_no = $_POST["phone_no"];
     $institution = $_POST["institution"];
     $department = $_POST["department"];
     
@@ -22,7 +22,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 if($result1->num_rows == 0){
     if($_POST['password'] == $_POST['cpassword']){ 
-        $sql = "INSERT INTO `users`(`name`, `emailid`, `mobile_no.`, `password`, `city`, `state`, `username`) VALUES ('$name','$email','$mobile_no','$password','$city','$state','$username')";
+        $sql = "INSERT INTO `users`(`name`, `emailid`, `phone_no`, `password`, `institution`, `department`, `rollnumber`) VALUES ('$name','$email','$phone_no','$password','$institution','$department','$rollnumber')";
         $sql2 = "CREATE TABLE `$username` (
             `s.no` INT AUTO_INCREMENT PRIMARY KEY,
             `transaction` VARCHAR(50),
