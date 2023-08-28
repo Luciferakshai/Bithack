@@ -27,7 +27,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $_SESSION["name"] = $name;
         $_SESSION["username"] = $username;
 
-        header("Location: index.html"); 
+        header("Location: home.html"); 
         exit;
     } else {
         header("Location: login.html");
