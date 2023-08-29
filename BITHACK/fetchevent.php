@@ -9,6 +9,8 @@ $eventname = $_GET['event'];
 $currentDate = date('Y-m-d');
 $sql = "SELECT * FROM events WHERE event_type='$eventname' AND end_date >= '$currentDate' ORDER BY start_date ASC";
 $result = $conn->query($sql);
+echo 
+        "<h3 style='text-align: center;text-transform: uppercase;font-family: Lucida Sans, Lucida Sans Regular, Lucida Grande, Lucida Sans Unicode, Geneva, Verdana, sans-serif;color: white;'>". $eventname ."</h3>";
 
 if ($result->num_rows > 0) {
     while ($row = $result->fetch_assoc()) {
@@ -23,7 +25,7 @@ if ($result->num_rows > 0) {
             <h2>". $name ."</h2>
             <p>Date: ". $start_date ." to ". $end_date ."</p>
             <p>Location: ". $venue ."</p>
-            <a href='#' class='btn'>Learn More</a>
+            <a href='format.html?event=". $name ."' class='btn'>Learn More</a>
           </div>
         </div>";
     }
