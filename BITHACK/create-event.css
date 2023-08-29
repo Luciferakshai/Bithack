@@ -38,8 +38,7 @@ form label {
 select,
 input[type="text"],
 input[type="date"],
-input[type="time"],
-input[type="file"]
+input[type="time"]
 textarea {
     width: 50%;
     padding: 6px;
@@ -66,9 +65,6 @@ button[type="submit"]:hover {
     background-color: #0056b3;
 }
 
-input[type="file"] {
-    display: choose-file;
-}
 
 .file-input-label {
     display: inline-block;
@@ -83,10 +79,4 @@ input[type="file"] {
 
 .file-input-label:hover {
     background-color: #0056b3;
-}
-
-.selected-file {
-    font-weight: bold;
-    margin-top: 10px;
-    color: #474646;
 }
