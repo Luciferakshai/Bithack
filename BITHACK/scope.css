@@ -1,0 +1,77 @@
+/* Global Styles */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f5f5f5;
+}
+
+/* Header Styles */
+.header {
+  background-color: #007BFF;
+  color: #fff;
+  text-align: center;
+  padding: 20px 0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.header-title {
+  margin: 0;
+}
+
+/* Navigation Styles */
+
+
+/* Main Content Styles */
+.main-content {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.activity {
+  background-color: #fff;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s, transform 0.3s;
+}
+
+.activity:hover {
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  transform: translateY(-5px);
+}
+
+.activity-title {
+  margin-top: 0;
+  color: #333;
+  font-size: 1.5rem;
+}
+
+.activity-info {
+  margin: 5px 0;
+  color: #777;
+}
+
+.activity-description {
+  margin: 15px 0;
+  color: #555;
+  line-height: 1.4;
+}
+
+.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #007BFF;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.btn:hover {
+  background-color: #0056b3;
+}
+
+/* Footer Styles */
