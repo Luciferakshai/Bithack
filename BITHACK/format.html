@@ -18,10 +18,16 @@ body {
 
 .poster {
     position: absolute; 
-    top: 0;
-    left: 20%;
-    height: 100%;
+    top: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    height: 90%;
     display: flex;
+    padding: 0px;
+    font-family:  system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    background-color: #ffffff89;
+    border-radius: 20px;
     
 }
 
@@ -30,10 +36,6 @@ body {
     border-radius: 10px 0 0 10px;
 }
 
-.poster {
-    padding: 0px;
-    font-family:  'Times New Roman', Times, serif;
-  }
 .container {
     display: flex;
     justify-content: center; /* Horizontal alignment */
@@ -57,7 +59,7 @@ h1 {
 .poster-content p {
     text-align: left; /* Aligns text within <p> elements to the right */
     margin: 0 0 10px;
-    color: #fffafa;
+    color: #4b4a4a;
     font-size: 25px;
     line-height: 2;
 }
@@ -118,6 +120,8 @@ h1 {
     </style>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="brochure.css">
     <title>Event Poster</title>
    
@@ -127,12 +131,12 @@ h1 {
         <div class="poster-content">
             <div class="brochure">
                 <h1 class="blinking" align="center">BIT HACK</h1>
-                <p class="bold-words"> <span class="animated-text bold"> Start Date: September 1, 2023 @ 9:00 AM</span></p>
-                <p class="bold-words"> <span class="animated-text bold">End Date: september 12, 2023 @ 10:00 PM</span></p>   
-                <p class="bold-words"> <span class="animated-text bold"> Venue: Conference Hall</span></p>
-                <p class="bold-words"> <span class="animated-text bold">Description: Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium molestiae quam debitis, voluptatum vel explicabo exercitationem aspernatur odit ipsam quis iste qui, beatae cupiditate delectus, magnam nihil aliquid error. Exercitationem.Join us for an interactive workshop on modern web development techniques.</span></p>
-                <p class="bold-words"> <span class="animated-text bold">Eligibility: Bit-students</span></p>
-                <p class="bold-words"> <span class="animated-text bold">Brochure:Content of your brochure.</span></p>
+                <p class="bold-words"> <span class="animated-text bold"><i class="fa fa-calendar"></i> &nbsp; Start Date: September 1, 2023 @ 9:00 AM</span></p>
+                <p class="bold-words"> </i><span class="animated-text bold"><i class="fa fa-calendar"></i> &nbsp; End Date: September 12, 2023 @ 10:00 PM</span></p>   
+                <p class="bold-words"> <i class="icon-venue"></i><span class="animated-text bold"><i class="fas fa-map-marker-alt"></i> &nbsp; Venue: Conference Hall</span></p>
+                <p class="bold-words"> <span class="animated-text bold"> <i class="	fas fa-list"></i> &nbsp; Description: Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium molestiae quam debitis, voluptatum vel explicabo exercitationem aspernatur odit ipsam quis iste qui, beatae cupiditate delectus, magnam nihil aliquid error. Exercitationem.Join us for an interactive workshop on modern web development techniques.</span></p>
+                <p class="bold-words"> <span class="animated-text bold"> <i class="fas fa-user-graduate"></i> &nbsp; Eligibility: Bit-students</span></p>
+                <p class="bold-words"> <span class="animated-text bold"><i class="fa fa-file"></i> &nbsp; Brochure:Content of your brochure.</span></p>
                 <a href="link-to-brochure.pdf" class="download-link">View Brochure</a>
             </div>
         </div>
