@@ -11,19 +11,20 @@
 
 <body>
   <section class="sign_up">
-    <div class="container">
+    <form class="container" action="register.php" method="post">
       <h1 style="font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;">REGISTER</h1>
       <p id="create" style="font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;">Create your account. It's free and only takes a minute</p>
-      <div class="name">
-        <input type="text" placeholder="Name" required>
-        <input type="text" placeholder="RollNumber" required>
-      </div>
+
       <div class="details">
-        <input type="email" placeholder="Email" required>
-        <input type="password" placeholder="Password" required>
-        <input type="password" placeholder="Confirm Password" required>
-        <input type="text" placeholder="Institution" required>
-        <input type="text" placeholder="Department" required list="type"><br>
+        
+        <input type="text" name="name" placeholder="Name" required>
+        <input type="text" name="rollnumber" placeholder="RollNumber" required>
+
+        <input name="email" type="email" placeholder="Email" required>
+        <input name="password" type="password" placeholder="Password" required>
+        <input name="cpassword" type="password" placeholder="Confirm Password" required>
+        <input name="institution" type="text" placeholder="Institution" required>
+        <input name="department" type="text" placeholder="Department" required list="type"><br>
         <datalist id="type">
           <option value="CSE">
           <option value="IT">
@@ -42,12 +43,12 @@
           <option value="AI/DS">
           <option value="AI/ML">
         </datalist>
-        <input type="text" placeholder="Phone number" required>
+        <input name="phone_no" type="text" placeholder="Phone number" required>
       </div>
       <div class="submit">
         <button type="submit">Register</button>
       </div>      
-    </div>
+    </form>
     <div class="signIn">
       <p style="font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;">
         
