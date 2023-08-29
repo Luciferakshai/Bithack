@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Event</title>
+    
+        <link rel="stylesheet" href="create-event.css">
+    
+</head>
+<body>
+    <h1>Create Event</h1>
+    <form id="event-form">
+        <label for="event-name">Event Name:</label>
+        <input type="text" id="event-name" required>
+        <br>
+        <label for="event-type">Event Type:</label>
+        <select id="event-type" required>
+            <option value="workshop">Workshop</option>
+            <option value="conference">Conference</option>
+            <option value="seminar">Seminar</option>
+        </select>
+        <br>
+        <label for="start-date">Start Date:</label>
+        <input type="date" id="start-date" required>
+        <br>
+        <label for="end-date">End Date:</label>
+        <input type="date" id="end-date" required>
+        <br>
+        <label for="start-time">Start Time:</label>
+        <input type="time" id="start-time" required>
+        <br>
+        <label for="event-endtime">End Time:</label>
+        <input type="time" id="event-endtime" required>
+        <br>
+        <label for="venue">Venue:</label>
+        <input type="text" id="venue" required>
+        <br>
+        <label for="event-description">Event Description:</label>
+        <textarea id="event-description" rows="4" required></textarea>
+        <br>
+        <label for="eligibility">Eligibility:</label>
+        <input type="text" id="eligibility" required>
+        <br>
+        <label for="event-brochure">Event Brochure (PDF):</label>
+        <input type="file" id="event-brochure" accept=".pdf">
+        <br>
+        <button type="submit">Create Event</button>
+    </form>
+
+    <script>
+        const eventForm = document.getElementById("event-form");
+
+        eventForm.addEventListener("submit", function(event) {
+            event.preventDefault(); // Prevent form submission
+
+            const eventName = document.getElementById("event-name").value;
+            const eventType = document.getElementById("event-type").value;
+            const startDate = document.getElementById("start-date").value;
+            const endDate = document.getElementById("end-date").value;
+            const startTime = document.getElementById("start-time").value;
+            const endTime = document.getElementById("end-time").value;
+            const venue = document.getElementById("venue").value;
+            const eventDescription = document.getElementById("event-description").value;
+            const eligibility = document.getElementById("eligibility").value;
+             // Retrieve the selected file
+            const eventBrochureInput = document.getElementById("event-brochure");
+            const selectedFile = eventBrochureInput.files[0];
+
+            // You can use this data to create the event and send it to a backend server
+            console.log("Event Name:", eventName);
+            console.log("Event Type:", eventType);
+            console.log("Start Date:", startDate);
+            console.log("End Date:", endDate);
+            console.log("Start Time:", startTime);
+            console.log("End Time:", endTime);
+            console.log("Venue:", venue);
+            console.log("Event Description:", eventDescription);
+            console.log("Eligibility:", eligibility);
+            console.log("Event Brochure:", selectedFile);
+
+            // Clear form inputs after event creation
+            eventForm.reset();
+            selectedFileSpan.textContent = "";
+        });
+    </script>
+</body>
+</html>
