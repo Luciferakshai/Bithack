@@ -212,9 +212,10 @@ background-color: #0056b3;
   </div>
 </div>`
 <h1 style="color: white; text-align: center;font-weight: bold;font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;">EVENTS</h1>
+
+<h3 style="text-align: center;font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;color: white;">CONFERENCE</h3>
 <div id="conference">
-    <h3 style="text-align: center;font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;color: white;">CONFERENCE</h3>
-    <div class="event-cards">
+  <div class="event-cards">
       <div class="card">
         <div class="card-content">
           <h2>Event 1</h2>
@@ -234,8 +235,8 @@ background-color: #0056b3;
   </div>
 </div>
 </div>
+<h3 style="text-align: center;font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;color: white;">WORKSHOPS</h3>
 <div id="workshop">
-    <h3 style="text-align: center;font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;color: white;">WORKSHOPS</h3>
     <div class="event-cards">
       <div class="card">
         <div class="card-content">
@@ -255,9 +256,10 @@ background-color: #0056b3;
       </div>
   </div>
 </div>
+<h3 style="text-align: center;font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;color: white;">SEMINAR</h3>
+
 <div id="seminar">
-    <h3 style="text-align: center;font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;color: white;">SEMINAR</h3>
-    <div class="event-cards">
+  <div class="event-cards">
       <div class="card">
         <div class="card-content">
           <h2>Event 1</h2>
@@ -276,9 +278,10 @@ background-color: #0056b3;
       </div>
   </div>
 </div>
+<h3 style="text-align: center;font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;color: white;">CLUB ACTIVITIES</h3>
+
 <div id="clubactivity">
-    <h3 style="text-align: center;font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;color: white;">CLUB ACTIVITIES</h3>
-    <div class="event-cards">
+  <div class="event-cards">
       <div class="card">
         <div class="card-content">
           <h2>Event 1</h2>
@@ -299,3 +302,67 @@ background-color: #0056b3;
 </div>
 </body>
 </html>
+<script>
+
+function fetchconference() {
+    var showsavings = document.getElementById('conference');
+    
+    var event = "conference";
+    var xhr = new XMLHttpRequest();
+    xhr.open('GET', 'fetchevent.php?event=' + event, true);
+    xhr.onreadystatechange = function() {
+        if (xhr.readyState === 4 && xhr.status === 200) {
+            showsavings.innerHTML = xhr.responseText;
+
+        }
+    };
+    xhr.send();
+}
+function fetchworkshop() {
+    var showsavings = document.getElementById('workshop');
+    
+    var event = "workshop";
+    var xhr = new XMLHttpRequest();
+    xhr.open('GET', 'fetchevent.php?event=' + event, true);
+    xhr.onreadystatechange = function() {
+        if (xhr.readyState === 4 && xhr.status === 200) {
+            showsavings.innerHTML = xhr.responseText;
+
+        }
+    };
+    xhr.send();
+}
+function fetchseminar() {
+    var showsavings = document.getElementById('seminar');
+    
+    var event = "seminar";
+    var xhr = new XMLHttpRequest();
+    xhr.open('GET', 'fetchevent.php?event=' + event, true);
+    xhr.onreadystatechange = function() {
+        if (xhr.readyState === 4 && xhr.status === 200) {
+            showsavings.innerHTML = xhr.responseText;
+
+        }
+    };
+    xhr.send();
+}
+function fetchclubactivity() {
+    var showsavings = document.getElementById('clubactivity');
+    
+    var event = "clubactivity";
+    var xhr = new XMLHttpRequest();
+    xhr.open('GET', 'fetchevent.php?event=' + event, true);
+    xhr.onreadystatechange = function() {
+        if (xhr.readyState === 4 && xhr.status === 200) {
+            showsavings.innerHTML = xhr.responseText;
+
+        }
+    };
+    xhr.send();
+}
+fetchconference();
+fetchseminar();
+fetchworkshop();
+fetchclubactivity();
+
+</script>
