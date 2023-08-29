@@ -10,10 +10,51 @@ margin: 0;
 padding: 70px;
 background: rgb(2,0,36);
 background: rgb(34,193,195);
-background: linear-gradient(0deg, rgba(34,193,195,1) 0%, rgba(253,187,45,1) 100%);
+background: rgb(46,37,50);
+background: radial-gradient(circle, rgba(46,37,50,1) 21%, rgba(138,43,226,1) 85%);
+}
+.top{
+  height: 100vh;
+}
+.top-content{ 
+  height: 80vh;
+  box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+  border-radius: 10px;
+  overflow-y: hidden;
+}
+.top-content p{
+  position: relative;
+  color: hsl(0, 0%, 68%);
+  font-weight: bold;
+  font-family: "Anonymous Pro", monospace;
+  letter-spacing: 7px;
+  overflow: hidden;
+  border-right: 2px solid hsl(0, 0%, 80%);
+  animation: typewriter 2s steps(44) 1s 1 normal both,
+    blinkTextCursor 500ms infinite;
+    color: white;
+    font-size: x-large;
+    
+}
+
+@keyframes typewriter {
+  from {
+    width: 0;
+  }
+  to {
+    width: 1010px;
+  }
+}
+@keyframes blinkTextCursor {
+  from {
+    border-right-color: hsl(0, 0%, 80%);
+  }
+  to {
+    border-right-color: transparent;
+  }
+}
 .button-container
 {
-height: 100vh;
 gap: 100px;
 justify-content: center;
 display: flex;
@@ -33,6 +74,7 @@ color: aliceblue;
 font-family: sans-serif;
 font-weight: bold;
 font-size: medium;
+box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
 }
 .btn2
 {
@@ -42,6 +84,7 @@ color: aliceblue;
 font-family: sans-serif;
 font-weight: bold;
 font-size: medium;
+box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
 }
 .btn3
 {
@@ -50,6 +93,7 @@ border-radius: 50px;
 color: aliceblue;
 font-family: sans-serif;
 font-weight: bold; font-size: medium;
+box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
 }
 
 
@@ -61,6 +105,7 @@ color: aliceblue;
 font-family: sans-serif;
 font-weight: bold;
 font-size: medium;
+box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
 }
 .btn5
 {
@@ -70,6 +115,7 @@ color: aliceblue;
 font-family: sans-serif;
 font-weight: bold;
 font-size: medium;
+box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
 }
 .btn1:hover,.btn2:hover,.btn3:hover,.btn4:hover,.btn5:hover{
     transform: scale(1.2);
@@ -82,36 +128,53 @@ font-size: medium;
         {
             height: 100vh;
         }
-        .event-cards {
-display: flex;
-justify-content: center;
-gap: 20px;
+.event-cards {
+  display: flex;
+  gap: 20px;
+  flex-direction: row; /* Arrange cards vertically */
+    align-items: center; /* Center cards horizontally */
 }
 
 .card {
-width: 300px;
-background-color: #fff;
-border-radius: 10px;
-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-overflow: hidden;
+    width: 300px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: box-shadow 0.3s, transform 0.3s;
 }
 
-.card img {
-width: 100%;
-height: auto;
-display: block;
+.card:hover {
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    transform: translateY(-5px);
 }
 
 .card-content {
-padding: 20px;
+    padding: 20px;
 }
 
 .card-content h2 {
-margin-top: 0;
+    margin-top: 0;
+    color: #333;
 }
 
 .card-content p {
-margin: 10px 0;
+    margin: 10px 0;
+    color: #777;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #8d55ff;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.btn:hover {
+    background-color: #7b49d5;
 }
 
 .btn {
@@ -130,106 +193,109 @@ background-color: #0056b3;
     </style>
 </head>
 <body>
-<div class="button-container" >
-
+<div class="top" >
+  
+  <div class="button-container" >
     <a href="#conference"><button class="btn1" type="button">CONFERENCE</button></a>
     <a href="#workshop"><button class="btn2" type="button">WORKSHOPS</button></a>
     <a href="#seminar"><button class="btn3" type="button">SEMINAR</button></a>
     <a href="#clubactivity"><button class="btn4" type="button">CLUB ACTIVITIES</button></a>
     <a href="#createevent"><button class="btn5" type="button">CREATE AN EVENT</button></a>
-</div>
+  </div>
+  <div class="top-content">
+    <p>Unveiling the Spectrum of Knowledge and Exploration: A Fusion of Conferences, Workshops, Seminars, and Club Activities<br>
+</p>
+<p>conference: Prepare to be captivated by our distinguished speakers and visionaries who will grace the conference stage.</p>
+<p>Workshops: Immerse yourself in the realm of experiential learning through our diverse range of workshops.</p>
+<p>Seminars: Our seminars are intellectual crossroads where luminaries and experts converge to dissect critical topics.</p>
+<p>Club Activities: Fuel your passion and connect with kindred spirits through our vibrant club activities.</p>
+  </div>
+</div>`
 <h1 style="color: white; text-align: center;font-weight: bold;font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;">EVENTS</h1>
 <div id="conference">
     <h3 style="text-align: center;font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;color: white;">CONFERENCE</h3>
     <div class="event-cards">
-        <div class="card">
-          <img src="event1.jpg" alt="Event 1">
-          <div class="card-content">
-            <h2>Event 1</h2>
-            <p>Date: July 15, 2023</p>
-            <p>Location: Example Venue</p>
-            <a href="#" class="btn">Learn More</a>
-          </div>
+      <div class="card">
+        <div class="card-content">
+          <h2>Event 1</h2>
+          <p>Date: July 15, 2023</p>
+          <p>Location: Example Venue</p>
+          <a href="#" class="btn">Learn More</a>
         </div>
-        <div class="card">
-          <img src="event2.jpg" alt="Event 2">
-          <div class="card-content">
-            <h2>Event 2</h2>
-            <p>Date: August 10, 2023</p>
-            <p>Location: Another Venue</p>
-            <a href="#" class="btn">Learn More</a>
-          </div>
+      </div>
+      <div class="card">
+        <div class="card-content">
+          <h2>Event 2</h2>
+          <p>Date: August 10, 2023</p>
+          <p>Location: Another Venue</p>
+          <a href="#" class="btn">Learn More</a>
         </div>
+      </div>
+  </div>
 </div>
 </div>
 <div id="workshop">
     <h3 style="text-align: center;font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;color: white;">WORKSHOPS</h3>
     <div class="event-cards">
-        <div class="card">
-          <img src="event1.jpg" alt="Event 1">
-          <div class="card-content">
-            <h2>Event 1</h2>
-            <p>Date: July 15, 2023</p>
-            <p>Location: Example Venue</p>
-            <a href="#" class="btn">Learn More</a>
-          </div>
+      <div class="card">
+        <div class="card-content">
+          <h2>Event 1</h2>
+          <p>Date: July 15, 2023</p>
+          <p>Location: Example Venue</p>
+          <a href="#" class="btn">Learn More</a>
         </div>
-        <div class="card">
-          <img src="event2.jpg" alt="Event 2">
-          <div class="card-content">
-            <h2>Event 2</h2>
-            <p>Date: August 10, 2023</p>
-            <p>Location: Another Venue</p>
-            <a href="#" class="btn">Learn More</a>
-          </div>
+      </div>
+      <div class="card">
+        <div class="card-content">
+          <h2>Event 2</h2>
+          <p>Date: August 10, 2023</p>
+          <p>Location: Another Venue</p>
+          <a href="#" class="btn">Learn More</a>
         </div>
-</div>
+      </div>
+  </div>
 </div>
 <div id="seminar">
     <h3 style="text-align: center;font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;color: white;">SEMINAR</h3>
     <div class="event-cards">
-        <div class="card">
-          <img src="event1.jpg" alt="Event 1">
-          <div class="card-content">
-            <h2>Event 1</h2>
-            <p>Date: July 15, 2023</p>
-            <p>Location: Example Venue</p>
-            <a href="#" class="btn">Learn More</a>
-          </div>
+      <div class="card">
+        <div class="card-content">
+          <h2>Event 1</h2>
+          <p>Date: July 15, 2023</p>
+          <p>Location: Example Venue</p>
+          <a href="#" class="btn">Learn More</a>
         </div>
-        <div class="card">
-          <img src="event2.jpg" alt="Event 2">
-          <div class="card-content">
-            <h2>Event 2</h2>
-            <p>Date: August 10, 2023</p>
-            <p>Location: Another Venue</p>
-            <a href="#" class="btn">Learn More</a>
-          </div>
+      </div>
+      <div class="card">
+        <div class="card-content">
+          <h2>Event 2</h2>
+          <p>Date: August 10, 2023</p>
+          <p>Location: Another Venue</p>
+          <a href="#" class="btn">Learn More</a>
         </div>
-</div>
+      </div>
+  </div>
 </div>
 <div id="clubactivity">
     <h3 style="text-align: center;font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;color: white;">CLUB ACTIVITIES</h3>
     <div class="event-cards">
-        <div class="card">
-          <img src="event1.jpg" alt="Event 1">
-          <div class="card-content">
-            <h2>Event 1</h2>
-            <p>Date: July 15, 2023</p>
-            <p>Location: Example Venue</p>
-            <a href="#" class="btn">Learn More</a>
-          </div>
+      <div class="card">
+        <div class="card-content">
+          <h2>Event 1</h2>
+          <p>Date: July 15, 2023</p>
+          <p>Location: Example Venue</p>
+          <a href="#" class="btn">Learn More</a>
         </div>
-        <div class="card">
-          <img src="event2.jpg" alt="Event 2">
-          <div class="card-content">
-            <h2>Event 2</h2>
-            <p>Date: August 10, 2023</p>
-            <p>Location: Another Venue</p>
-            <a href="#" class="btn">Learn More</a>
-          </div>
+      </div>
+      <div class="card">
+        <div class="card-content">
+          <h2>Event 2</h2>
+          <p>Date: August 10, 2023</p>
+          <p>Location: Another Venue</p>
+          <a href="#" class="btn">Learn More</a>
         </div>
-</div>
+      </div>
+  </div>
 </div>
 </body>
 </html>
