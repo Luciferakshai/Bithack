@@ -25,7 +25,7 @@ if ($result->num_rows > 0) {
             <h2>". $name ."</h2>
             <p>Date: ". $start_date ." to ". $end_date ."</p>
             <p>Location: ". $venue ."</p>
-            <a href='format.html?event=". $name ."' class='btn'>Learn More</a>
+            <a href='format.html?event=". $name ."&type=". $eventname ."' class='btn'>Learn More</a>
           </div>
         </div>";
     }
