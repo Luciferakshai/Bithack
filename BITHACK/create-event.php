@@ -5,6 +5,8 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
+$id = $_GET['id'];
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     $eventname = $_POST["eventname"];
@@ -22,7 +24,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $existingResult = $conn->query($checkExisting);
     
     if ($existingResult->num_rows == 0) {
-        $sql = "INSERT INTO `events` (`name`, `event_type`, `start_date`, `end_date`, `start_time`, `end_time`, `venue`, `description`, `eligibility`, `filename`) VALUES ('$eventname', '$eventtype', '$sdate', '$edate', '$stime', '$etime', '$venue', '$description', '$eligibility', '$brochurePath')";
+        $sql = "INSERT INTO `events` (`name`, `event_type`, `start_date`, `end_date`, `start_time`, `end_time`, `venue`, `description`, `eligibility`, `filename`, `faculty`) VALUES ('$eventname', '$eventtype', '$sdate', '$edate', '$stime', '$etime', '$venue', '$description', '$eligibility', '$filename', '$id')";
+
         $sql2 = "CREATE TABLE $eventname (
             s_no INT(255) AUTO_INCREMENT PRIMARY KEY,
             name TEXT(255),
