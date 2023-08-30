@@ -138,8 +138,10 @@ box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2
     color: black;
     transition-duration: 0.5s;
 }
-
-        #workshop,#seminar,#createevent,#conference
+#createevent{
+  display: none;
+}
+        #workshop,#seminar,#clubactivities,#conference
         {
             height: 100vh;
         }
@@ -178,19 +180,6 @@ box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2
     color: #777;
 }
 
-.btn {
-    display: inline-block;
-    padding: 10px 20px;
-    background-color: #8d55ff;
-    color: #fff;
-    text-decoration: none;
-    border-radius: 5px;
-    transition: background-color 0.3s;
-}
-
-.btn:hover {
-    background-color: #7b49d5;
-}
 
 .btn {
 display: inline-block;
@@ -205,6 +194,7 @@ transition: background-color 0.3s;
 .btn:hover {
 background-color: #0056b3;
 }
+
     </style>
 </head>
 <body>
@@ -255,7 +245,7 @@ background-color: #0056b3;
     <a href="#workshop"><button class="btn2" type="button">WORKSHOPS</button></a>
     <a href="#seminar"><button class="btn3" type="button">SEMINAR</button></a>
     <a href="#clubactivity"><button class="btn4" type="button">CLUB ACTIVITIES</button></a>
-    <a href="#createevent"><button class="btn5" type="button">CREATE AN EVENT</button></a>
+    <a href="create-event.html"><button class="btn5" id="createevent" type="button">CREATE AN EVENT</button></a>
   </div>
   <div class="top-content">
     <p>Unveiling the Spectrum of Knowledge and Exploration: A Fusion of Conferences, Workshops, Seminars, and Club Activities<br>
@@ -354,56 +344,56 @@ background-color: #0056b3;
 <script>
 
 function fetchconference() {
-    var showsavings = document.getElementById('conference');
+    var showconference = document.getElementById('conference');
     
     var event = "conference";
     var xhr = new XMLHttpRequest();
     xhr.open('GET', 'fetchevent.php?event=' + event, true);
     xhr.onreadystatechange = function() {
         if (xhr.readyState === 4 && xhr.status === 200) {
-            showsavings.innerHTML = xhr.responseText;
+          showconference.innerHTML = xhr.responseText;
 
         }
     };
     xhr.send();
 }
 function fetchworkshop() {
-    var showsavings = document.getElementById('workshop');
+    var showworkshop = document.getElementById('workshop');
     
     var event = "workshop";
     var xhr = new XMLHttpRequest();
     xhr.open('GET', 'fetchevent.php?event=' + event, true);
     xhr.onreadystatechange = function() {
         if (xhr.readyState === 4 && xhr.status === 200) {
-            showsavings.innerHTML = xhr.responseText;
+          showworkshop.innerHTML = xhr.responseText;
 
         }
     };
     xhr.send();
 }
 function fetchseminar() {
-    var showsavings = document.getElementById('seminar');
+    var showseminar = document.getElementById('seminar');
     
     var event = "seminar";
     var xhr = new XMLHttpRequest();
     xhr.open('GET', 'fetchevent.php?event=' + event, true);
     xhr.onreadystatechange = function() {
         if (xhr.readyState === 4 && xhr.status === 200) {
-            showsavings.innerHTML = xhr.responseText;
+          showseminar.innerHTML = xhr.responseText;
 
         }
     };
     xhr.send();
 }
 function fetchclubactivity() {
-    var showsavings = document.getElementById('clubactivity');
+    var showclubactivity = document.getElementById('clubactivity');
     
     var event = "clubactivity";
     var xhr = new XMLHttpRequest();
     xhr.open('GET', 'fetchevent.php?event=' + event, true);
     xhr.onreadystatechange = function() {
         if (xhr.readyState === 4 && xhr.status === 200) {
-            showsavings.innerHTML = xhr.responseText;
+          showclubactivity.innerHTML = xhr.responseText;
 
         }
     };
@@ -414,4 +404,10 @@ fetchseminar();
 fetchworkshop();
 fetchclubactivity();
 
+const urlParams = new URLSearchParams(window.location.search);
+
+const who = urlParams.get('who');
+if(who == "faculty"){
+  document.getElementById('createevent').style.display='block';
+}
 </script>
