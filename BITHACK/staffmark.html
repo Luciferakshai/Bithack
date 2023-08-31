@@ -74,53 +74,10 @@
   </style>
 </head>
 <body>
-  <nav>
-    <div class="wrapper">
-      <div class="left">
-        <div class="logo">
-          <i class="fa-brands fa-linkedin"></i>
-        </div>
-        <div class="input">
-          <i class="fa-solid fa-magnifying-glass"></i>
-        </div>
-      </div>
-      <div class="right">
-        <div class="nav-item">
-          <i class="fa-solid fa-house"></i>
-          <h6><a href="#">Home</a></h6>
-        </div>
-        <div class="nav-item">
-          <i class="fa-solid fa-user-group"></i>
-          <h6><a href="#section3">About</a></h6>
-        </div>
-        <div class="nav-item">
-          <i class="fa-solid fa-suitcase"></i>
-          <h6><a href="event.html" id="events-heading">Events</a></h6>
-        </div>
-        <div class="nav-item">
-          <i class="fa-solid fa-message"></i>
-          <h6><a href="./resources.html">Resources</a></h6>
-        </div>
-        <div class="nav-item">
-          <i class="fa-solid fa-bell"></i>
-          <h6><a>Notifications</a></h6>
-        </div>
-        <div class="nav-item">
-          <i class="fa-solid fa-user"></i>
-          <h6><a href="#">Me</a> <i class="fa-solid fa-angle-down"></i></h6>
-        </div>
-        <div class="nav-item">
-          <i class="fa-solid fa-braille"></i>
-          <h6><a href="contact.html">Contact Us</a> <i class="fa-solid fa-angle-down"></i></h6>
-        </div>
-        <a href="#">LOG OUT</a>
-      </div>
-    </div>
-  </nav>
   
   <h1 style="font-family:sans-serif;margin: 20px;">Event Evaluation</h1>
 
-  <div id="cards-container">
+  <div id="content">
     <div class="card">
       <h3>John Doe</h3>
       <p>Roll Number: 2021001</p>
@@ -163,13 +120,13 @@
 const urlParams = new URLSearchParams(window.location.search);
 const event = urlParams.get('event');
 function fetchworkshop() {
-    var showworkshop = document.getElementById('card-container');
+    var showregstudent = document.getElementById('content');
     
     var xhr = new XMLHttpRequest();
     xhr.open('GET', 'fetchregstudent.php?event=' + event, true);
     xhr.onreadystatechange = function() {
         if (xhr.readyState === 4 && xhr.status === 200) {
-          showworkshop.innerHTML = xhr.responseText;
+          showregstudent.innerHTML = xhr.responseText;
 
         }
     };
