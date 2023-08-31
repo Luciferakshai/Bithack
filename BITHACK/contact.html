@@ -5,15 +5,14 @@
     <meta charset="UTF-8">
     <title> Contact Us Form </title>
     <link rel="stylesheet" href="contact.css">
-    <link rel="stylesheet" href="./contact.css">
     <!-- Fontawesome CDN Link -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="contact.js" type = "text/javascript"></script>
-     
+
 </head>
 <body>
-  <div class="container"> 
+  <div class="container">
     <div class="content">
       <div class="left-side">
         <div class="address details">
@@ -41,31 +40,42 @@
 
       <form action="">
         <div class="input-box">
-
-          <input type="text"id = "fullName" name="name" placeholder="Enter your name">
+          <input type="text"id = "fullName" placeholder="Enter your name">
         </div>
         <div class="input-box">
-          <input type="text" id="emailInput"  name="email" placeholder="Enter your email">
+          <input type="text" id="emailInput" placeholder="Enter your email">
         </div>
           <div class="input-box">
-            <input type="text" id = "subject" name="subject" placeholder="Enter subject">
+            <input type="text" id = "subject" placeholder="Enter subject">
           </div>
         <div class="input-box message-box" id="messageBox">
           <textarea id="message" placeholder="Enter a message"></textarea>
         </div>
-      
-        <div class="button">
-
-          <input type="button" id = "button" value="Send Now" >
-
-
-        </div>
         
-
+        <div class="button">
+          <input onclick="Send()" type="button" value="submit" >
+        </div>
       </form>
-   
-  
+    </div>
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
    
     </div>
   </div>
 </body>
+<script>
+   
+const urlParams = new URLSearchParams(window.location.search);
+
+const who = urlParams.get('who');
+
+const rollnumber = urlParams.get('rollnumber');
+const links = document.querySelectorAll('a');
+
+// Loop through each link and update the href attribute
+links.forEach(link => {
+    const originalHref = link.getAttribute('href');
+    link.href = `${originalHref}?who=${who}&rollnumber=${rollnumber}`;
+});
+</script>
