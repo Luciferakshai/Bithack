@@ -1,9 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-<<<<<<< HEAD
-<<<<<<< Updated upstream
-=======
+
+
     <title>Purple Buzz HTML Template with Bootstrap 5 Beta 1</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -21,7 +20,6 @@
 
 
 
->>>>>>> 9387d795b84edc1ad1570acabbe601c9929c8a67
 <style>
     html{
         scroll-behavior: smooth;
@@ -86,9 +84,9 @@ display: flex;
 {
 padding: 30px 50px;
 }
-=======
-    <style>
-     body {
+    
+      
+     .body {
             margin: 0;
             padding: 70px;
             background-image: linear-gradient(to right, #fffbd5, #b20a2c);}
@@ -98,7 +96,7 @@ padding: 30px 50px;
             justify-content: center;
           
         }
->>>>>>> Stashed changes
+
 
 .btn1
 {
@@ -165,19 +163,18 @@ box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2
         {
             height: 100vh;
         }
-<<<<<<< HEAD
-<<<<<<< Updated upstream
+
         .event-cards {
 display: flex;
 justify-content: center;
 gap: 20px;
-=======
+        }
 .event-cards {
   display: flex;
   gap: 20px;
   flex-direction: row; /* Arrange cards vertically */
     align-items: center; /* Center cards horizontally */
->>>>>>> 9387d795b84edc1ad1570acabbe601c9929c8a67
+
 }
 
 .card {
@@ -195,7 +192,7 @@ gap: 20px;
 }
 
 .card-content {
-    padding: 20px;
+    padding: 0px;
 }
 
 .card-content h2 {
@@ -369,72 +366,6 @@ background-color: #0056b3;
 </div>
 </body>
 </html>
-<<<<<<< HEAD
-=======
-    
-        .btn1 
-        {
-            background-color:  rgb(12, 17, 39);
-            border-radius: 50px;
-            color: aliceblue;
-            font-family: sans-serif;
-            font-weight: bold;
-            font-size: medium;
-        }
-        .btn2 
-        {
-            background-color:  rgb(12, 17, 39);
-            border-radius: 50px;
-            color: aliceblue;
-            font-family: sans-serif;
-            font-weight: bold;
-            font-size: medium;
-        }
-
-        
-        .btn3
-        {
-            background-color: rgb(12, 17, 39);
-            border-radius: 50px;
-            color: aliceblue;
-            font-family: sans-serif;
-            font-weight: bold;
-            font-size: medium;
-        }
-        
-        .btn4
-        {
-            background-color:  rgb(12, 17, 39);
-            border-radius: 50px;
-            color: aliceblue;
-            font-family: sans-serif;
-            font-weight: bold;
-            font-size: medium;
-        }
-       .section-1{
-        height: 100vh;
-        padding-bottom: 100px;
-        
-       }
-    </style>
-</head>
-<body>
-
-<div class="button-container">
-  <button  class ="btn1" type="button"> <a href="#section-1"></a>CONFERENCE</button>
-    <button class="btn2" type="button">WORKSHOPS</button>
-    <button class="btn3" type="button">SEMINAR</button>
-    <button class="btn4" type="button">CREATE AN EVENT</button>
-</div>
-<div id = "section-1"><p>ipsum dolor sit amet consectetur adipisicing elit. Neque accusantium voluptatum tempore, fugiat possimus vel excepturi, ipsum hic rerum odit aspernatur quam dignissimos iusto. Natus suscipit eius facere doloribus dolorum.</p></div>
-
- 
-</body>
-   
-
-
->>>>>>> Stashed changes
-=======
 <script>
 
 function fetchconference() {
@@ -504,5 +435,13 @@ const who = urlParams.get('who');
 if(who == "faculty"){
   document.getElementById('createevent').style.display='block';
 }
+
+if (who === "faculty") {
+    var staffElement = document.getElementById("staff");
+    staffElement.innerHTML = "<a class='nav-link btn-outline-primary rounded-pill px-3' href='facultyevent.html'>events by you</a>";
+};
+links.forEach(link => {
+    const originalHref = link.getAttribute('href');
+    link.href = `${originalHref}?who=${who}&rollnumber=${rollnumber}`;
+});
 </script>
->>>>>>> 9387d795b84edc1ad1570acabbe601c9929c8a67

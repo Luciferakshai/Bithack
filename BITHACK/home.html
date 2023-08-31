@@ -36,7 +36,7 @@
                 <div class="flex-fill mx-xl-5 mb-2">
                     <ul class="nav navbar-nav d-flex justify-content-between mx-xl-5 text-center text-dark">
                         <li class="nav-item">
-                            <a class="nav-link btn-outline-primary rounded-pill px-3" href="home.html">Home</a>
+                            <a class="nav-link btn-outline-primary rounded-pill px-3" href="home.html" >Home</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link btn-outline-primary rounded-pill px-3" href="about.html">About</a>
@@ -44,7 +44,7 @@
                         <li class="nav-item">
                             <a class="nav-link btn-outline-primary rounded-pill px-3" href="event.html">Events</a>
                         </li>
-                        <li class="nav-item">
+                        <li class="nav-item" id="staff">
                             <a class="nav-link btn-outline-primary rounded-pill px-3" href="leaderboard.html">Leader-Board</a>
                         </li>
                         <li class="nav-item">
@@ -291,6 +291,22 @@
                 return false;
             });
         });
+const urlParams = new URLSearchParams(window.location.search);
+
+const who = urlParams.get('who');
+
+const rollnumber = urlParams.get('rollnumber');
+const links = document.querySelectorAll('a');
+
+
+if (who === "faculty") {
+    var staffElement = document.getElementById("staff");
+    staffElement.innerHTML = "<a class='nav-link btn-outline-primary rounded-pill px-3' href='facultyevent.html'>events by you</a>";
+};
+links.forEach(link => {
+    const originalHref = link.getAttribute('href');
+    link.href = `${originalHref}?who=${who}&rollnumber=${rollnumber}`;
+});
     </script>
     <!-- Templatemo -->
     <script src="assets/js/templatemo.js"></script>

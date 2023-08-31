@@ -49,3 +49,20 @@
     </form>
 </body>
 </html>
+<script> 
+    const urlParams = new URLSearchParams(window.location.search);
+    
+    const who = urlParams.get('who');
+    
+    const rollnumber = urlParams.get('rollnumber');
+    const links = document.querySelectorAll('a');
+    
+if (who === "faculty") {
+    var staffElement = document.getElementById("staff");
+    staffElement.innerHTML = "<a class='nav-link btn-outline-primary rounded-pill px-3' href='facultyevent.html'>events by you</a>";
+};
+links.forEach(link => {
+    const originalHref = link.getAttribute('href');
+    link.href = `${originalHref}?who=${who}&rollnumber=${rollnumber}`;
+});
+    </script>
