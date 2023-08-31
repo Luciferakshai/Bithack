@@ -35,7 +35,7 @@
                 <div class="flex-fill mx-xl-5 mb-2">
                     <ul class="nav navbar-nav d-flex justify-content-between mx-xl-5 text-center text-dark">
                         <li class="nav-item">
-                            <a class="nav-link btn-outline-primary rounded-pill px-3" href="home.html">Home</a>
+                            <a class="nav-link btn-outline-primary rounded-pill px-3" href="home.html" >Home</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link btn-outline-primary rounded-pill px-3" href="about.html">About</a>
@@ -290,6 +290,18 @@
                 return false;
             });
         });
+const urlParams = new URLSearchParams(window.location.search);
+
+const who = urlParams.get('who');
+
+const rollnumber = urlParams.get('rollnumber');
+const links = document.querySelectorAll('a');
+
+// Loop through each link and update the href attribute
+links.forEach(link => {
+    const originalHref = link.getAttribute('href');
+    link.href = `${originalHref}?who=${who}&rollnumber=${rollnumber}`;
+});
     </script>
     <!-- Templatemo -->
     <script src="assets/js/templatemo.js"></script>

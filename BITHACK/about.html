@@ -75,7 +75,7 @@ https://templatemo.com/tm-561-purple-buzz
                 <div class="col-lg-6 text-start">
                     <h1 class="h2 py-5 text-primary typo-space-line">About Us</h1>
                     <p class="light-300">
-                        "At <strong>INFO PORTAL</strong>, we are dedicated to fostering a culture of growth and learning. With a rich history and a commitment to excellence, we provide a platform for individuals to explore their potential, embrace challenges, and achieve their aspirations. Our values of <strong>Core Values</strong> drive everything we do, as we continue to contribute meaningfully to Relevant Field. Join us on this journey of <strong>empowerment and discovery.</strong></p>
+                        Our <strong>INFO PORTAL</strong>, we are dedicated to fostering a culture of growth and learning. With a rich history and a commitment to excellence, we provide a platform for individuals to explore their potential, embrace challenges, and achieve their aspirations. Our values of <strong>Core Values</strong> drive everything we do, as we continue to contribute meaningfully to Relevant Field. Join us on this journey of <strong>empowerment and discovery.</strong></p>
                 </div>
                 <div class="col-lg-6">
                     <img src="./assets/img/banner-img-02.svg">
@@ -393,3 +393,18 @@ https://templatemo.com/tm-561-purple-buzz
 </body>
 
 </html>
+<script>
+   
+const urlParams = new URLSearchParams(window.location.search);
+
+const who = urlParams.get('who');
+
+const rollnumber = urlParams.get('rollnumber');
+const links = document.querySelectorAll('a');
+
+// Loop through each link and update the href attribute
+links.forEach(link => {
+    const originalHref = link.getAttribute('href');
+    link.href = `${originalHref}?who=${who}&rollnumber=${rollnumber}`;
+});
+</script>

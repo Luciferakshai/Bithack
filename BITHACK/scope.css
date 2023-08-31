@@ -59,3 +59,49 @@ body {
   }
   @return $val;
 }
+/* Reset some default styles */
+body, h1, h2, p {
+  margin: 0;
+  padding: 0;
+}
+
+/* Basic styling */
+body {
+  font-family: Arial, sans-serif;
+}
+
+header {
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+}
+
+main {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+.update-card {
+  border: 1px solid #ddd;
+  padding: 4rem;
+  margin-bottom: 1rem;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+}
+
+.update-card h2 {
+  color: #333;
+}
+
+.date {
+  color: #666;
+}
+
+footer {
+  text-align: center;
+  padding: 1rem;
+  background-color: #333;
+  color: white;
+}
