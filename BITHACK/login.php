@@ -18,16 +18,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     $sql = "SELECT * FROM users WHERE emailid = '$emailid' AND password = '$password'";
     $result = $conn->query($sql);
-
+    $who=s;
     if ($result->num_rows > 0) {
         $row = $result->fetch_assoc();
-        $name = $row['name'];
-        $username = $row['username'];
-
-        $_SESSION["name"] = $name;
-        $_SESSION["username"] = $username;
-
-        header("Location: home.html"); 
+        $rollnumber = $row['rollnumber'];
+        header("Location: home.html?who=$who&rollnumber=$rollnumber"); 
         exit;
     } else {
         echo '<script>alert("Incorrect email-ID/password");

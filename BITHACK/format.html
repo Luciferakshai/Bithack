@@ -162,4 +162,17 @@ const type = urlParams.get('type');
         xhr.send();
     }
     fetchevent();
+     
+const urlParams = new URLSearchParams(window.location.search);
+
+const who = urlParams.get('who');
+
+const rollnumber = urlParams.get('rollnumber');
+const links = document.querySelectorAll('a');
+
+// Loop through each link and update the href attribute
+links.forEach(link => {
+    const originalHref = link.getAttribute('href');
+    link.href = `${originalHref}?who=${who}&rollnumber=${rollnumber}`;
+});
 </script>
