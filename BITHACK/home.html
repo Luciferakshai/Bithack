@@ -43,7 +43,7 @@
                         <li class="nav-item">
                             <a class="nav-link btn-outline-primary rounded-pill px-3" href="event.html">Events</a>
                         </li>
-                        <li class="nav-item">
+                        <li class="nav-item" id="staff">
                             <a class="nav-link btn-outline-primary rounded-pill px-3" href="leaderboard.html">Leader-Board</a>
                         </li>
                         <li class="nav-item">
@@ -302,6 +302,10 @@ links.forEach(link => {
     const originalHref = link.getAttribute('href');
     link.href = `${originalHref}?who=${who}&rollnumber=${rollnumber}`;
 });
+if (who === "faculty") {
+    var staffElement = document.getElementById("staff");
+    staffElement.innerHTML = "<a class='nav-link btn-outline-primary rounded-pill px-3' href='#'>events by you</a>";
+}
     </script>
     <!-- Templatemo -->
     <script src="assets/js/templatemo.js"></script>
