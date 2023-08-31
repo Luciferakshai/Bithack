@@ -395,6 +395,10 @@ https://templatemo.com/tm-561-purple-buzz
 </html>
 <script>
    
+if (who === "faculty") {
+    var staffElement = document.getElementById("staff");
+    staffElement.innerHTML = "<a class='nav-link btn-outline-primary rounded-pill px-3' href='facultyevent.html'>events by you</a>";
+};
 const urlParams = new URLSearchParams(window.location.search);
 
 const who = urlParams.get('who');
@@ -408,8 +412,4 @@ links.forEach(link => {
     link.href = `${originalHref}?who=${who}&rollnumber=${rollnumber}`;
 });
 
-if (who === "faculty") {
-    var staffElement = document.getElementById("staff");
-    staffElement.innerHTML = "<a class='nav-link btn-outline-primary rounded-pill px-3' href='#'>events by you</a>";
-};
 </script>
