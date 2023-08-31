@@ -16,7 +16,7 @@
       margin-bottom: 20px;
     }
 
-    .cards-container {
+    #cards-container {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
       gap: 20px;
@@ -120,7 +120,7 @@
   
   <h1 style="font-family:sans-serif;margin: 20px;">Event Evaluation</h1>
 
-  <div class="cards-container">
+  <div id="cards-container">
     <div class="card">
       <h3>John Doe</h3>
       <p>Roll Number: 2021001</p>
@@ -161,7 +161,21 @@
 <script>
    
 const urlParams = new URLSearchParams(window.location.search);
+const event = urlParams.get('event');
+function fetchworkshop() {
+    var showworkshop = document.getElementById('card-container');
+    
+    var xhr = new XMLHttpRequest();
+    xhr.open('GET', 'fetchregstudent.php?event=' + event, true);
+    xhr.onreadystatechange = function() {
+        if (xhr.readyState === 4 && xhr.status === 200) {
+          showworkshop.innerHTML = xhr.responseText;
 
+        }
+    };
+    xhr.send();
+}
+fetchworkshop();
 const who = urlParams.get('who');
 
 const rollnumber = urlParams.get('rollnumber');
