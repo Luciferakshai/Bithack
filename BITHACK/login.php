@@ -30,8 +30,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         header("Location: home.html"); 
         exit;
     } else {
-        header("Location: login.html");
-        exit;
+        echo '<script>alert("Incorrect email-ID/password");
+        window.history.back();
+        </script>';
     }
 }
 

@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
+<<<<<<< HEAD
+<<<<<<< Updated upstream
+=======
     <title>Purple Buzz HTML Template with Bootstrap 5 Beta 1</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -18,6 +21,7 @@
 
 
 
+>>>>>>> 9387d795b84edc1ad1570acabbe601c9929c8a67
 <style>
     html{
         scroll-behavior: smooth;
@@ -25,7 +29,10 @@
 body {
 margin: 0;
 padding: 0px;
-background: #6366E2;
+background: rgb(2,0,36);
+background: rgb(34,193,195);
+background: rgb(46,37,50);
+background: radial-gradient(circle, rgba(46,37,50,1) 21%, rgba(138,43,226,1) 85%);
 }
 .top{
   height: 100vh;
@@ -79,6 +86,19 @@ display: flex;
 {
 padding: 30px 50px;
 }
+=======
+    <style>
+     body {
+            margin: 0;
+            padding: 70px;
+            background-image: linear-gradient(to right, #fffbd5, #b20a2c);}
+        .button-container {
+            display: flex;
+            gap: 100px; /* Adjust the gap as needed */
+            justify-content: center;
+          
+        }
+>>>>>>> Stashed changes
 
 .btn1
 {
@@ -138,16 +158,26 @@ box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2
     color: black;
     transition-duration: 0.5s;
 }
-
-        #workshop,#seminar,#createevent,#conference
+#createevent{
+  display: none;
+}
+        #workshop,#seminar,#clubactivities,#conference
         {
             height: 100vh;
         }
+<<<<<<< HEAD
+<<<<<<< Updated upstream
+        .event-cards {
+display: flex;
+justify-content: center;
+gap: 20px;
+=======
 .event-cards {
   display: flex;
   gap: 20px;
   flex-direction: row; /* Arrange cards vertically */
     align-items: center; /* Center cards horizontally */
+>>>>>>> 9387d795b84edc1ad1570acabbe601c9929c8a67
 }
 
 .card {
@@ -178,19 +208,6 @@ box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2
     color: #777;
 }
 
-.btn {
-    display: inline-block;
-    padding: 10px 20px;
-    background-color: #8d55ff;
-    color: #fff;
-    text-decoration: none;
-    border-radius: 5px;
-    transition: background-color 0.3s;
-}
-
-.btn:hover {
-    background-color: #7b49d5;
-}
 
 .btn {
 display: inline-block;
@@ -205,6 +222,7 @@ transition: background-color 0.3s;
 .btn:hover {
 background-color: #0056b3;
 }
+
     </style>
 </head>
 <body>
@@ -255,7 +273,7 @@ background-color: #0056b3;
     <a href="#workshop"><button class="btn2" type="button">WORKSHOPS</button></a>
     <a href="#seminar"><button class="btn3" type="button">SEMINAR</button></a>
     <a href="#clubactivity"><button class="btn4" type="button">CLUB ACTIVITIES</button></a>
-    <a href="#createevent"><button class="btn5" type="button">CREATE AN EVENT</button></a>
+    <a href="create-event.html"><button class="btn5" id="createevent" type="button">CREATE AN EVENT</button></a>
   </div>
   <div class="top-content">
     <p>Unveiling the Spectrum of Knowledge and Exploration: A Fusion of Conferences, Workshops, Seminars, and Club Activities<br>
@@ -351,59 +369,125 @@ background-color: #0056b3;
 </div>
 </body>
 </html>
+<<<<<<< HEAD
+=======
+    
+        .btn1 
+        {
+            background-color:  rgb(12, 17, 39);
+            border-radius: 50px;
+            color: aliceblue;
+            font-family: sans-serif;
+            font-weight: bold;
+            font-size: medium;
+        }
+        .btn2 
+        {
+            background-color:  rgb(12, 17, 39);
+            border-radius: 50px;
+            color: aliceblue;
+            font-family: sans-serif;
+            font-weight: bold;
+            font-size: medium;
+        }
+
+        
+        .btn3
+        {
+            background-color: rgb(12, 17, 39);
+            border-radius: 50px;
+            color: aliceblue;
+            font-family: sans-serif;
+            font-weight: bold;
+            font-size: medium;
+        }
+        
+        .btn4
+        {
+            background-color:  rgb(12, 17, 39);
+            border-radius: 50px;
+            color: aliceblue;
+            font-family: sans-serif;
+            font-weight: bold;
+            font-size: medium;
+        }
+       .section-1{
+        height: 100vh;
+        padding-bottom: 100px;
+        
+       }
+    </style>
+</head>
+<body>
+
+<div class="button-container">
+  <button  class ="btn1" type="button"> <a href="#section-1"></a>CONFERENCE</button>
+    <button class="btn2" type="button">WORKSHOPS</button>
+    <button class="btn3" type="button">SEMINAR</button>
+    <button class="btn4" type="button">CREATE AN EVENT</button>
+</div>
+<div id = "section-1"><p>ipsum dolor sit amet consectetur adipisicing elit. Neque accusantium voluptatum tempore, fugiat possimus vel excepturi, ipsum hic rerum odit aspernatur quam dignissimos iusto. Natus suscipit eius facere doloribus dolorum.</p></div>
+
+ 
+</body>
+   
+
+
+>>>>>>> Stashed changes
+=======
 <script>
 
 function fetchconference() {
-    var showsavings = document.getElementById('conference');
+    var showconference = document.getElementById('conference');
     
     var event = "conference";
     var xhr = new XMLHttpRequest();
     xhr.open('GET', 'fetchevent.php?event=' + event, true);
     xhr.onreadystatechange = function() {
         if (xhr.readyState === 4 && xhr.status === 200) {
-            showsavings.innerHTML = xhr.responseText;
+          showconference.innerHTML = xhr.responseText;
 
         }
     };
     xhr.send();
 }
 function fetchworkshop() {
-    var showsavings = document.getElementById('workshop');
+    var showworkshop = document.getElementById('workshop');
     
     var event = "workshop";
     var xhr = new XMLHttpRequest();
     xhr.open('GET', 'fetchevent.php?event=' + event, true);
     xhr.onreadystatechange = function() {
         if (xhr.readyState === 4 && xhr.status === 200) {
-            showsavings.innerHTML = xhr.responseText;
+          showworkshop.innerHTML = xhr.responseText;
 
         }
     };
     xhr.send();
 }
 function fetchseminar() {
-    var showsavings = document.getElementById('seminar');
+    var showseminar = document.getElementById('seminar');
     
     var event = "seminar";
     var xhr = new XMLHttpRequest();
     xhr.open('GET', 'fetchevent.php?event=' + event, true);
     xhr.onreadystatechange = function() {
         if (xhr.readyState === 4 && xhr.status === 200) {
-            showsavings.innerHTML = xhr.responseText;
+          showseminar.innerHTML = xhr.responseText;
 
         }
     };
     xhr.send();
 }
 function fetchclubactivity() {
-    var showsavings = document.getElementById('clubactivity');
+    var showclubactivity = document.getElementById('clubactivity');
     
     var event = "clubactivity";
     var xhr = new XMLHttpRequest();
     xhr.open('GET', 'fetchevent.php?event=' + event, true);
     xhr.onreadystatechange = function() {
         if (xhr.readyState === 4 && xhr.status === 200) {
-            showsavings.innerHTML = xhr.responseText;
+          showclubactivity.innerHTML = xhr.responseText;
 
         }
     };
@@ -414,4 +498,11 @@ fetchseminar();
 fetchworkshop();
 fetchclubactivity();
 
+const urlParams = new URLSearchParams(window.location.search);
+
+const who = urlParams.get('who');
+if(who == "faculty"){
+  document.getElementById('createevent').style.display='block';
+}
 </script>
+>>>>>>> 9387d795b84edc1ad1570acabbe601c9929c8a67
