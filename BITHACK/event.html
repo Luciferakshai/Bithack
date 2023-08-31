@@ -366,8 +366,6 @@ background-color: #0056b3;
 </div>
 </body>
 </html>
-<<<<<<< HEAD
-=======
     
         .btn1 
         {
@@ -430,7 +428,6 @@ background-color: #0056b3;
    
 
 
->>>>>>> Stashed changes
 =======
 <script>
 
@@ -501,5 +498,9 @@ const who = urlParams.get('who');
 if(who == "faculty"){
   document.getElementById('createevent').style.display='block';
 }
+
+if (who === "faculty") {
+    var staffElement = document.getElementById("staff");
+    staffElement.innerHTML = "<a class='nav-link btn-outline-primary rounded-pill px-3' href='#'>events by you</a>";
+};
 </script>
->>>>>>> 9387d795b84edc1ad1570acabbe601c9929c8a67
