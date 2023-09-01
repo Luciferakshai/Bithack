@@ -1,36 +1,127 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Leaderboard</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f7f7f7;
-            margin: 0;
-            padding: 0;
-        }
+</head>
+<style>
+    body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f0f0f0;
+    background-image: linear-gradient(45deg,rgba(0, 0, 0, 0.2),rgba(0, 0, 0, 0.2)),url('https://i.ytimg.com/vi/A6vlG4B9dGM/maxresdefault.jpg');
+    background-size: cover;
+    background-position: center;
+}
 
-        .leaderboard {
-            width: 80%;
-            margin: 20px auto;
-            background-color: #fff;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            border-radius: 10px;
-        }
 
-        .leaderboard h1 {
+
+.leaderboard {
+    display: flex;
+    align-items: center;
+    border: 2px solid #333;
+    border-radius: 5px;
+    
+}
+
+
+.leaderboard h1 {
             text-align: center;
             padding: 20px;
             background-color: #333;
             color: #fff;
-            margin: 0;
-            border-top-left-radius: 10px;
-            border-top-right-radius: 10px;
+            margin-top: 0 5px;
+			position: absolute;
+			top: 10%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+            width: 75%;
+		  
         }
 
-        table {
+.box {
+    align-items: center;
+    width: 300px;
+    margin:  10px;
+    border: 2px solid #333;
+    background-color: #fff;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.gold {
+    background-color: #FFD700;
+    width: 250px;
+    height: 350px;
+    font-size: 24px;
+    text-align: center;
+    background-image: linear-gradient(45deg,rgba(237, 230, 22, 0.959),rgba(0, 0, 0, 0.2)),url('https://i.pinimg.com/564x/7f/6f/90/7f6f904b7060e6c069b081b130603d9e.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    
+    
+}
+
+.silver {
+    background-color: #C0C0C0;
+    width: 50px;
+    padding: 70px;
+    font-size: 20px;
+    text-align: center;
+    background-image: linear-gradient(45deg,rgba(240, 240, 227, 0.959),rgba(0, 0, 0, 0.2)),url('https://thumbs.dreamstime.com/z/silver-second-place-trophy-isolated-white-background-d-render-85639777.jpg?w=768');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    
+}
+
+.bronze {
+    background-color: #CD7F32;
+    width: 50px;
+    padding: 70px;
+    font-size: 20px;
+    text-align: center;
+    background-image: linear-gradient(45deg,rgba(225, 164, 72, 0.959),rgba(0, 0, 0, 0.2)),url('https://img.freepik.com/premium-photo/winner-award-cube-bronze-laurel-wreath-podium-stage-pedestal-with-bronzer-number-three-third-place-white-background-3d-rendering_476612-15911.jpg?w=2000');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    
+}
+
+.position {
+    font-weight: bold;
+    font-size: 20px;
+    align-items: center;
+}
+
+.name {
+    align-items: center;
+    text-align: center;
+}
+
+.score {
+    font-weight: bold;
+    font-size: 18px;
+}
+
+
+
+table {
             width: 100%;
             border-collapse: collapse;
+            margin-top: 0 5px;
+			position: absolute;
+			bottom: -50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+            width: 75%;
         }
 
         th, td {
@@ -74,96 +165,73 @@
                 padding-right: 10px;
             }
         }
-    </style>
+
         
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="apple-touch-icon" href="assets/img/apple-icon.png">
-        <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.ico">
-        <!-- Load Require CSS -->
-        <link href="assets/css/bootstrap.min.css" rel="stylesheet">
-        <!-- Font CSS -->
-        <link href="assets/css/boxicon.min.css" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
-        <!-- Load Tempalte CSS -->
-        <link rel="stylesheet" href="assets/css/templatemo.css">
-        <!-- Custom CSS -->
-        <link rel="stylesheet" href="assets/css/custom.css">
 
-</head>
+</style>
 <body>
-    <nav id="main_nav" class="navbar navbar-expand-lg navbar-light bg-white shadow">
-        <div class="container d-flex justify-content-between align-items-center">
-            <a class="navbar-brand h1" href="index.html">
-                <i class='bx bx-buildings bx-sm text-dark'></i>
-                <span class="text-dark h4">INFO PORTAL</span> <span class="text-primary h4"></span>
-            </a>
-            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-toggler-success" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
 
-            <div class="align-self-center collapse navbar-collapse flex-fill  d-lg-flex justify-content-lg-between" id="navbar-toggler-success">
-                <div class="flex-fill mx-xl-5 mb-2">
-                    <ul class="nav navbar-nav d-flex justify-content-between mx-xl-5 text-center text-dark">
-                        <li class="nav-item">
-                            <a class="nav-link btn-outline-primary rounded-pill px-3" href="home.html">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link btn-outline-primary rounded-pill px-3" href="about.html">About</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link btn-outline-primary rounded-pill px-3" href="event.html">Events</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link btn-outline-primary rounded-pill px-3" href="leaderboard.html">Leader board</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link btn-outline-primary rounded-pill px-3" href="contact.html">Contact</a>
-                        </li>
-                    </ul>
-                </div>
-                <div class="navbar align-self-center d-flex">
-                    <a class="nav-link" href="#"><i class='bx bx-bell bx-sm bx-tada-hover text-primary'></i></a>
-                    <a class="nav-link" href="#"><i class='bx bx-cog bx-sm text-primary'></i></a>
-                    <a class="nav-link" href="#"><i class='bx bx-user-circle bx-sm text-primary'></i></a>
-                </div>
-            </div>
-        </div>
-    </nav>
     <div class="leaderboard">
-        <h1>Leaderboard</h1>
-        <table>
-            <thead>
-                <tr>
-                    <th>Rank</th>
-                    <th>Name</th>
-                    <th>Score</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>1</td>
-                    <td>Player 1</td>
-                    <td>1000</td>
-                </tr>
-                <tr>
-                    <td>2</td>
-                    <td>Player 2</td>
-                    <td>900</td>
-                </tr>
-                <tr>
-                    <td>3</td>
-                    <td>Player 3</td>
-                    <td>800</td>
-                </tr>
-                <tr>
-                    <td>4</td>
-                    <td>Player 4</td>
-                    <td>700</td>
-                </tr>
-                <!-- Add more rows for additional players -->
-            </tbody>
-        </table>
+        <h1 style="text-align: center;">Leaderboard</h1>
+        <div class="box silver">
+            <b><span class="position">2nd</span><br><br></b>
+            <b><span class="name">John Doe</span><br><br></b>
+            <b><span class="score">800</span><br></b>
+        </div>
+        <div class="box gold">
+            <b><p><span class="position">1st</span><br></p></b>
+            <b><p><span class="name">Harithvarakesan</span><br></p></b>
+            <b><p><span class="score">1000</span></p></b>
+        </div>
+        <div class="box bronze">
+            <b><span class="position">3rd</span><br><br></b>
+            <b><span class="name">Bob Johnson</span><br><br></b>
+            <b><span class="score">600</span><br></b>
+        </div>
     </div>
+
+
+
+    <table>
+        <thead>
+            <tr>
+                <th>Rank</th>
+                <th>Name</th>
+                <th>Score</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>4</td>
+                <td>Player 4</td>
+                <td>500</td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td>Player 5</td>
+                <td>400</td>
+            </tr>
+            <tr>
+                <td>6</td>
+                <td>Player 6</td>
+                <td>300</td>
+            </tr>
+            <tr>
+                <td>7</td>
+                <td>Player 7</td>
+                <td>200</td>
+            </tr>
+            <tr>
+                <td>8</td>
+                <td>Player 8</td>
+                <td>200</td>
+            </tr>
+            <!-- Add more rows for additional players -->
+        </tbody>
+    </table>
+    
+    
 </body>
 </html>
+
+
