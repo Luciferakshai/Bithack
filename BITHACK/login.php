@@ -18,7 +18,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     $sql = "SELECT * FROM users WHERE emailid = '$emailid' AND password = '$password'";
     $result = $conn->query($sql);
-    $who=s;
+    $who="s";
     if ($result->num_rows > 0) {
         $row = $result->fetch_assoc();
         $rollnumber = $row['rollnumber'];

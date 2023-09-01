@@ -12,13 +12,13 @@ echo
         "<h1 style='font-family:sans-serif;margin: 20px;'>". $eventname ."</h1>
         <div id='cards-container'>";
 
+        $num=1;
 if ($result->num_rows > 0) {
     while ($row = $result->fetch_assoc()) {
         $name = $row['name'];
         $rollnumber = $row['rollnumber'];
         $emailid = $row['emailid'];
         $department = $row['department'];
-        
         echo 
         "<div class='card'>
         <h3>". $name ."</h3>
@@ -26,10 +26,16 @@ if ($result->num_rows > 0) {
         <p>Email: ". $emailid ."</p>
         <p>Department: ". $department ."</p>
         <form onsubmit='submitForm(this); return false;'>
-          <input type='number' name='event1_marks_1' min='0' max='100' placeholder='Event 1 Marks' required>
-          <button type='submit'>Submit</button>
+          <input type='number' name='event_mark' min='0' max='100' placeholder='Enter marks' required>
+          <button type='submit' onclick='store".$num."()'>Submit</button>
         </form>
-        </div>";
+        </div>
+        <script>
+          function store".$num."(){
+            
+          }
+        </script>";
+        $num=$num+1;
     }
 } else {
     echo "<h3>No upcomming events found in ". $eventname ."</h3>";

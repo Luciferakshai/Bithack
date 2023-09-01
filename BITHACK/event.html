@@ -366,11 +366,15 @@ background-color: #0056b3;
 <script>
 
 function fetchconference() {
+  
+var urlParams = new URLSearchParams(window.location.search);
+var rollnumber = urlParams.get('rollnumber');
     var showconference = document.getElementById('conference');
     
     var event = "conference";
     var xhr = new XMLHttpRequest();
-    xhr.open('GET', 'fetchevent.php?event=' + event, true);
+xhr.open('GET', 'fetchevent.php?event=' + event + '&rollnumber=' + rollnumber, true);
+
     xhr.onreadystatechange = function() {
         if (xhr.readyState === 4 && xhr.status === 200) {
           showconference.innerHTML = xhr.responseText;
@@ -380,11 +384,14 @@ function fetchconference() {
     xhr.send();
 }
 function fetchworkshop() {
+  
+var urlParams = new URLSearchParams(window.location.search);
+var rollnumber = urlParams.get('rollnumber');
     var showworkshop = document.getElementById('workshop');
     
     var event = "workshop";
     var xhr = new XMLHttpRequest();
-    xhr.open('GET', 'fetchevent.php?event=' + event, true);
+xhr.open('GET', 'fetchevent.php?event=' + event + '&rollnumber=' + rollnumber, true);
     xhr.onreadystatechange = function() {
         if (xhr.readyState === 4 && xhr.status === 200) {
           showworkshop.innerHTML = xhr.responseText;
@@ -394,11 +401,14 @@ function fetchworkshop() {
     xhr.send();
 }
 function fetchseminar() {
+  
+var urlParams = new URLSearchParams(window.location.search);
+var rollnumber = urlParams.get('rollnumber');
     var showseminar = document.getElementById('seminar');
     
     var event = "seminar";
     var xhr = new XMLHttpRequest();
-    xhr.open('GET', 'fetchevent.php?event=' + event, true);
+xhr.open('GET', 'fetchevent.php?event=' + event + '&rollnumber=' + rollnumber, true);
     xhr.onreadystatechange = function() {
         if (xhr.readyState === 4 && xhr.status === 200) {
           showseminar.innerHTML = xhr.responseText;
@@ -408,11 +418,14 @@ function fetchseminar() {
     xhr.send();
 }
 function fetchclubactivity() {
+  
+var urlParams = new URLSearchParams(window.location.search);
+var rollnumber = urlParams.get('rollnumber');
     var showclubactivity = document.getElementById('clubactivity');
     
     var event = "clubactivity";
     var xhr = new XMLHttpRequest();
-    xhr.open('GET', 'fetchevent.php?event=' + event, true);
+xhr.open('GET', 'fetchevent.php?event=' + event + '&rollnumber=' + rollnumber, true);
     xhr.onreadystatechange = function() {
         if (xhr.readyState === 4 && xhr.status === 200) {
           showclubactivity.innerHTML = xhr.responseText;
