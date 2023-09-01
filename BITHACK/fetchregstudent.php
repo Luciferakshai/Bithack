@@ -32,7 +32,7 @@ if ($result->num_rows > 0) {
         </div>
         <script>
           function store".$num."(){
-            
+            header('Location: submitmark.php?rollnumber=".$rollnumber."'); 
           }
         </script>";
         $num=$num+1;
