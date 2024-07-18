@@ -5,6 +5,7 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
+$rollnumber = $_GET['rollnumber'];
 $eventname = $_GET['event'];
 $currentDate = date('Y-m-d');
 $sql = "SELECT * FROM events WHERE event_type='$eventname' AND end_date >= '$currentDate' ORDER BY start_date ASC";
@@ -26,7 +27,7 @@ if ($result->num_rows > 0) {
             <h2>". $name ."</h2>
             <p>Date: ". $start_date ." to ". $end_date ."</p>
             <p>Location: ". $venue ."</p>
-            <a href='format.html?event=". $name ."&type=". $eventname ."' class='btn'>Learn More</a>
+            <a href='format.html?event=". $name ."&type=". $eventname ."&rollnumber=".$rollnumber."' class='btn'>Learn More</a>
           </div>
         </div>";
     }

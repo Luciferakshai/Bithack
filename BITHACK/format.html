@@ -151,8 +151,9 @@ h1 {
 
 const event = urlParams.get('event');
 const type = urlParams.get('type');
+const rollnumber = urlParams.get('rollnumber');
         var xhr = new XMLHttpRequest();
-        xhr.open('GET', 'fetcheventdetails.php?event=' + event +'&type=' + type, true);
+        xhr.open('GET', 'fetcheventdetails.php?event=' + event +'&type=' + type+'&rollnumber='+rollnumber, true);
         xhr.onreadystatechange = function() {
             if (xhr.readyState === 4 && xhr.status === 200) {
                 show.innerHTML = xhr.responseText;

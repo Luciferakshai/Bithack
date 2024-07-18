@@ -27,10 +27,7 @@
 body {
 margin: 0;
 padding: 0px;
-background: rgb(2,0,36);
-background: rgb(34,193,195);
-background: rgb(46,37,50);
-background: radial-gradient(circle, rgba(46,37,50,1) 21%, rgba(138,43,226,1) 85%);
+background-color: #6366E2 ;
 }
 .top{
   height: 100vh;
@@ -41,6 +38,7 @@ background: radial-gradient(circle, rgba(46,37,50,1) 21%, rgba(138,43,226,1) 85%
   box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
   border-radius: 10px;
   overflow-y: hidden;
+  padding: 30px;
 }
 .top-content p{
   position: relative;
@@ -62,7 +60,7 @@ background: radial-gradient(circle, rgba(46,37,50,1) 21%, rgba(138,43,226,1) 85%
     width: 0;
   }
   to {
-    width: 1010px;
+    width: 1200px;
   }
 }
 @keyframes blinkTextCursor {
@@ -193,6 +191,8 @@ gap: 20px;
 
 .card-content {
     padding: 0px;
+    text-align: center;
+    padding: 10px;
 }
 
 .card-content h2 {
@@ -238,7 +238,7 @@ background-color: #0056b3;
                 <div class="flex-fill mx-xl-5 mb-2">
                     <ul class="nav navbar-nav d-flex justify-content-between mx-xl-5 text-center text-dark">
                         <li class="nav-item">
-                            <a class="nav-link btn-outline-primary rounded-pill px-3" href="home.html">Home</a>
+                            <a class="nav-link btn-outline-primary rounded-pill px-3" href="index.html">Home</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link btn-outline-primary rounded-pill px-3" href="about.html">About</a>
@@ -246,8 +246,8 @@ background-color: #0056b3;
                         <li class="nav-item">
                             <a class="nav-link btn-outline-primary rounded-pill px-3" href="event.html">Events</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link btn-outline-primary rounded-pill px-3" href="leaderboard.html">Leader board</a>
+                        <li class="nav-item" id="staff">
+                            <a class="nav-link btn-outline-primary rounded-pill px-3" href="leaderboard.html" >Leader board</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link btn-outline-primary rounded-pill px-3" href="contact.html">Contact</a>
@@ -366,80 +366,18 @@ background-color: #0056b3;
 </div>
 </body>
 </html>
-<<<<<<< HEAD
-=======
-    
-        .btn1 
-        {
-            background-color:  rgb(12, 17, 39);
-            border-radius: 50px;
-            color: aliceblue;
-            font-family: sans-serif;
-            font-weight: bold;
-            font-size: medium;
-        }
-        .btn2 
-        {
-            background-color:  rgb(12, 17, 39);
-            border-radius: 50px;
-            color: aliceblue;
-            font-family: sans-serif;
-            font-weight: bold;
-            font-size: medium;
-        }
-
-        
-        .btn3
-        {
-            background-color: rgb(12, 17, 39);
-            border-radius: 50px;
-            color: aliceblue;
-            font-family: sans-serif;
-            font-weight: bold;
-            font-size: medium;
-        }
-        
-        .btn4
-        {
-            background-color:  rgb(12, 17, 39);
-            border-radius: 50px;
-            color: aliceblue;
-            font-family: sans-serif;
-            font-weight: bold;
-            font-size: medium;
-        }
-       .section-1{
-        height: 100vh;
-        padding-bottom: 100px;
-        
-       }
-    </style>
-</head>
-<body>
-
-<div class="button-container">
-  <button  class ="btn1" type="button"> <a href="#section-1"></a>CONFERENCE</button>
-    <button class="btn2" type="button">WORKSHOPS</button>
-    <button class="btn3" type="button">SEMINAR</button>
-    <button class="btn4" type="button">CREATE AN EVENT</button>
-</div>
-<div id = "section-1"><p>ipsum dolor sit amet consectetur adipisicing elit. Neque accusantium voluptatum tempore, fugiat possimus vel excepturi, ipsum hic rerum odit aspernatur quam dignissimos iusto. Natus suscipit eius facere doloribus dolorum.</p></div>
-
- 
-</body>
-   
-
-
->>>>>>> Stashed changes
-=======
 <script>
 
 function fetchconference() {
+  
+var urlParams = new URLSearchParams(window.location.search);
+var rollnumber = urlParams.get('rollnumber');
     var showconference = document.getElementById('conference');
     
     var event = "conference";
     var xhr = new XMLHttpRequest();
-    xhr.open('GET', 'fetchevent.php?event=' + event, true);
+xhr.open('GET', 'fetchevent.php?event=' + event + '&rollnumber=' + rollnumber, true);
+
     xhr.onreadystatechange = function() {
         if (xhr.readyState === 4 && xhr.status === 200) {
           showconference.innerHTML = xhr.responseText;
@@ -449,11 +387,14 @@ function fetchconference() {
     xhr.send();
 }
 function fetchworkshop() {
+  
+var urlParams = new URLSearchParams(window.location.search);
+var rollnumber = urlParams.get('rollnumber');
     var showworkshop = document.getElementById('workshop');
     
     var event = "workshop";
     var xhr = new XMLHttpRequest();
-    xhr.open('GET', 'fetchevent.php?event=' + event, true);
+xhr.open('GET', 'fetchevent.php?event=' + event + '&rollnumber=' + rollnumber, true);
     xhr.onreadystatechange = function() {
         if (xhr.readyState === 4 && xhr.status === 200) {
           showworkshop.innerHTML = xhr.responseText;
@@ -463,11 +404,14 @@ function fetchworkshop() {
     xhr.send();
 }
 function fetchseminar() {
+  
+var urlParams = new URLSearchParams(window.location.search);
+var rollnumber = urlParams.get('rollnumber');
     var showseminar = document.getElementById('seminar');
     
     var event = "seminar";
     var xhr = new XMLHttpRequest();
-    xhr.open('GET', 'fetchevent.php?event=' + event, true);
+xhr.open('GET', 'fetchevent.php?event=' + event + '&rollnumber=' + rollnumber, true);
     xhr.onreadystatechange = function() {
         if (xhr.readyState === 4 && xhr.status === 200) {
           showseminar.innerHTML = xhr.responseText;
@@ -477,11 +421,14 @@ function fetchseminar() {
     xhr.send();
 }
 function fetchclubactivity() {
+  
+var urlParams = new URLSearchParams(window.location.search);
+var rollnumber = urlParams.get('rollnumber');
     var showclubactivity = document.getElementById('clubactivity');
     
     var event = "clubactivity";
     var xhr = new XMLHttpRequest();
-    xhr.open('GET', 'fetchevent.php?event=' + event, true);
+xhr.open('GET', 'fetchevent.php?event=' + event + '&rollnumber=' + rollnumber, true);
     xhr.onreadystatechange = function() {
         if (xhr.readyState === 4 && xhr.status === 200) {
           showclubactivity.innerHTML = xhr.responseText;
@@ -501,5 +448,13 @@ const who = urlParams.get('who');
 if(who == "faculty"){
   document.getElementById('createevent').style.display='block';
 }
+
+if (who === "faculty") {
+    var staffElement = document.getElementById("staff");
+    staffElement.innerHTML = "<a class='nav-link btn-outline-primary rounded-pill px-3' href='facultyevent.html'>events by you</a>";
+};
+links.forEach(link => {
+    const originalHref = link.getAttribute('href');
+    link.href = `${originalHref}?who=${who}&rollnumber=${rollnumber}`;
+});
 </script>
->>>>>>> 9387d795b84edc1ad1570acabbe601c9929c8a67

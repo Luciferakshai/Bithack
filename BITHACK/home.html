@@ -2,7 +2,8 @@
 <html lang="en">
 
 <head>
-    <title>Purple Buzz HTML Template with Bootstrap 5 Beta 1</title>
+    
+    <title>INFO PORTAL</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="apple-touch-icon" href="assets/img/apple-icon.png">
@@ -43,7 +44,7 @@
                         <li class="nav-item">
                             <a class="nav-link btn-outline-primary rounded-pill px-3" href="event.html">Events</a>
                         </li>
-                        <li class="nav-item">
+                        <li class="nav-item" id="staff">
                             <a class="nav-link btn-outline-primary rounded-pill px-3" href="leaderboard.html">Leader-Board</a>
                         </li>
                         <li class="nav-item">
@@ -297,7 +298,11 @@ const who = urlParams.get('who');
 const rollnumber = urlParams.get('rollnumber');
 const links = document.querySelectorAll('a');
 
-// Loop through each link and update the href attribute
+
+if (who === "faculty") {
+    var staffElement = document.getElementById("staff");
+    staffElement.innerHTML = "<a class='nav-link btn-outline-primary rounded-pill px-3' href='facultyevent.html'>events by you</a>";
+};
 links.forEach(link => {
     const originalHref = link.getAttribute('href');
     link.href = `${originalHref}?who=${who}&rollnumber=${rollnumber}`;
